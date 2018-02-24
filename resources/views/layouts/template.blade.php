@@ -17,66 +17,69 @@
 </head>
 <body class="px-lg-5 bg-secondary">
 	<div class="body-container mx-lg-4 bg-light">
-		<div class="topbar">
+		<div class="topbar px-4 py-1">
 			<div class="topbar links">
 				<!-- <a href="" class="text-uppercase">home</a> -->
 				<a href="" class="text-uppercase">login</a>
 				<a href="" class="text-uppercase">register</a>
 			</div>
-			<div class="topbar social">
-				<i class="fab fa-facebook-square"></i>
-				<i class="fab fa-twitter-square"></i>
-				<i class="fab fa-google-plus-square"></i>
-				<i class="fas fa-rss-square"></i>
+			<div class="topbar social text-light">
+				<i class="fab fa-facebook-square fa-2x"></i>
+				<i class="fab fa-twitter-square fa-2x"></i>
+				<i class="fab fa-google-plus-square fa-2x"></i>
+				<i class="fas fa-rss-square fa-2x"></i>
 			</div>
 		</div><!-- end topbar -->
 
-		<div class="main">
-			<div class="header">
-				<div class="header name text-uppercase"><h1 class="m-0">newsmoto</h1><small>your news, our news</small></div>
+		<div class="main px-4">
+			<div class="header my-3">
+				<div class="header name text-uppercase"><h1 class="header big m-0">newsmoto</h1><small>your online news magazine</small></div>
 			</div><!-- end header -->
-			<div class="nav">
-				<div class="nav link">
-					<i class="fas fa-home"></i>
-				</div>
-				<div class="nav link">
-					<h3>News</h3>
-				</div>
-				<div class="nav link">
-					<h3>Business</h3>
-				</div>
-				<div class="nav link">
-					<h3>Music</h3>
-				</div>
-				<div class="nav link">
-					<h3>Movies</h3>
-				</div>
-				<div class="nav link">
-					<h3>Lifestyle</h3>
-				</div>
-				<div class="nav link">
-					<h3>Sports</h3>
-				</div>
-				<div class="nav link">
-					<h3>Tech</h3>
-				</div>
-				<div class="nav link">
-					<h3>Entertainment</h3>
-				</div>
-				<div class="nav button">
-					<i class="fas fa-random"></i>
-				</div>
-				<div class="nav button">
-					<i class="fas fa-search"></i>
-				</div>
+			<div class="nav text-light">
+				<a href="" class="nav link p-3">
+					<i class="fas fa-home fa-2x"></i>
+				</a>
+				<a href="" class="nav link p-3">
+					<h4 class="m-0">News</h4>
+				</a>
+				<a href="" class="nav link p-3">
+					<h4 class="m-0">Business</h4>
+				</a>
+				<a href="" class="nav link p-3">
+					<h4 class="m-0">Music</h4>
+				</a>
+				<a href="" class="nav link p-3">
+					<h4 class="m-0">Movies</h4>
+				</a>
+				<a href="" class="nav link p-3">
+					<h4 class="m-0">Lifestyle</h4>
+				</a>
+				<a href="" class="nav link p-3">
+					<h4 class="m-0">Sports</h4>
+				</a>
+				<a href="" class="nav link p-3">
+					<h4 class="m-0">Tech</h4>
+				</a>
+				<a href="" class="nav link p-3">
+					<h4 class="m-0">Entertainment</h4>
+				</a>
+				<a href="" class="nav button random p-3">
+					<i class="fas fa-random fa-2x"></i>
+				</a>
+				<a href="" class="nav button search p-3">
+					<i class="fas fa-search fa-2x"></i>
+				</a>
 			</div><!-- end nav -->
-			<div class="breaking">
-				<div class="breaking icon"><i class="fas fa-bolt"></i> Breaking</div>
+
+			<div class="breaking my-4">
+				<div class="breaking icon text-light text-uppercase p-2"><i class="fas fa-bolt"></i> Breaking news</div>
 				<div class="breaking carousel"></div>
 			</div>
+
 			<div>
 				@include('partials.news-trending')
 			</div>
+
 			<div>
 				@include('partials.news-business')
 			</div>
