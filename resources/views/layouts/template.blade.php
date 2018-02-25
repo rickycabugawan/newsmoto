@@ -31,16 +31,13 @@
 			</div>
 		</div><!-- end topbar -->
 
-		<div class="main px-4 pt-3">
+		<div class="main px-4 py-3">
 			<div class="header">
 				<div class="header name text-uppercase"><h1 class="header big m-0">newsmoto</h1><small>your online news magazine</small></div>
 			</div><!-- end header -->
 			<div class="nav text-light">
 				<a href="" class="nav link p-3">
-					<i class="fas fa-home"></i>
-				</a>
-				<a href="" class="nav link p-3">
-					<h5 class="m-0">News</h5>
+					<i class="fas fa-home fa-2x"></i>
 				</a>
 				<a href="" class="nav link p-3">
 					<h5 class="m-0">Business</h5>
@@ -64,10 +61,10 @@
 					<h5 class="m-0">Entertainment</h5>
 				</a>
 				<a href="" class="nav button random p-3">
-					<i class="fas fa-random"></i>
+					<i class="fas fa-random fa-2x"></i>
 				</a>
 				<a href="" class="nav button search p-3">
-					<i class="fas fa-search"></i>
+					<i class="fas fa-search fa-2x"></i>
 				</a>
 			</div><!-- end nav -->
 
@@ -76,15 +73,22 @@
 				<div class="breaking carousel"></div>
 			</div>
 
-			
 			@include('partials.news-trending')
 			@include('partials.news-music')
 			@include('partials.news-sports')
 			@include('partials.news-entertainment')
-			
-			
+			@include('partials.news-business')
+			@include('partials.news-tech')
+			@include('partials.news-movies')
+			@include('partials.news-lifestyle')
 
+			@include('partials.home-aside')
 		</div><!-- end main -->
+		@include('partials.home-content-list')
+		<div class="footer px-4 py-3 text-light">
+			Copyright &copy rickycabugawan 2018
+		</div><!-- end footer -->
+
 	</div><!-- end body-container -->
 
     <!-- Scripts -->

@@ -20,26 +20,37 @@
 			consequat.</div>
 			<button class=" news-item common btn btn-dark">Read More <i class="fas fa-angle-double-right"></i></button>
 		</div>
-		<div class="news entertainment common news-item small">
+		<div class="news entertainment common news-item smaller pb-2">
 			<div class="news-item common inner-container">
 				<div class="news-item common image" style="background-image:url(/images/music2.jpg)"></div>
-				<a href="" class="news-item common category px-1 ml-3">Entertainement</a>
-				<div class="news-item common title ml-3 mb-2"><a href="">Lorem ipsum dolor sit amet</a></div>
 			</div>
+				<div class="news-item common title"><a href="">Lorem ipsum dolor sit amet</a></div>
+				<div class="news-item common date-posted"><i class="far fa-calendar-alt"></i>Feb 22, 2018</div>
+				<div class="news-item common author"><i class="fas fa-user"></i>Admin</div>
 		</div>
-		<div class="news entertainment common news-item small">
+		<div class="news entertainment common news-item smaller pb-2">
 			<div class="news-item common inner-container">
-				<div class="news-item common image" style="background-image:url(/images/music3.jpg)"></div>
-				<a href="" class="news-item common category px-1 ml-3">Entertainement</a>
-				<div class="news-item common title ml-3 mb-2"><a href="">Lorem ipsum dolor sit amet</a></div>
+				<div class="news-item common image" style="background-image:url(/images/music2.jpg)"></div>
 			</div>
+				<div class="news-item common title"><a href="">Lorem ipsum dolor sit amet</a></div>
+				<div class="news-item common date-posted"><i class="far fa-calendar-alt"></i>Feb 22, 2018</div>
+				<div class="news-item common author"><i class="fas fa-user"></i>Admin</div>
 		</div>
-		<div class="news entertainment common news-item small">
+		<div class="news entertainment common news-item smaller pb-2">
 			<div class="news-item common inner-container">
-				<div class="news-item common image" style="background-image:url(/images/music4.jpg)"></div>
-				<a href="" class="news-item common category px-1 ml-3">Entertainement</a>
-				<div class="news-item common title ml-3 mb-2"><a href="">Lorem ipsum dolor sit amet</a></div>
+				<div class="news-item common image" style="background-image:url(/images/music2.jpg)"></div>
 			</div>
+				<div class="news-item common title"><a href="">Lorem ipsum dolor sit amet</a></div>
+				<div class="news-item common date-posted"><i class="far fa-calendar-alt"></i>Feb 22, 2018</div>
+				<div class="news-item common author"><i class="fas fa-user"></i>Admin</div>
+		</div>
+		<div class="news entertainment common news-item smaller pb-2">
+			<div class="news-item common inner-container">
+				<div class="news-item common image" style="background-image:url(/images/music2.jpg)"></div>
+			</div>
+				<div class="news-item common title"><a href="">Lorem ipsum dolor sit amet</a></div>
+				<div class="news-item common date-posted"><i class="far fa-calendar-alt"></i>Feb 22, 2018</div>
+				<div class="news-item common author"><i class="fas fa-user"></i>Admin</div>
 		</div>
 	</div>
 </div>
