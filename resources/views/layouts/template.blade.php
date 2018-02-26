@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>NewsMOTO</title>
+    <title>@yield('title')</title>
 
     <!-- Styles -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
@@ -73,14 +73,7 @@
 				<div class="breaking carousel"></div>
 			</div>
 
-			@include('partials.news-trending')
-			@include('partials.news-music')
-			@include('partials.news-sports')
-			@include('partials.news-entertainment')
-			@include('partials.news-business')
-			@include('partials.news-tech')
-			@include('partials.news-movies')
-			@include('partials.news-lifestyle')
+			@yield('content')
 
 			@include('partials.home-aside')
 		</div><!-- end main -->

@@ -12,8 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('layouts.template');
+    return view('homepage');
 });
+
+Route::get('/article', function () {
+    return view('article');
+});
+
 
 Auth::routes();
 
