@@ -128,9 +128,11 @@
 			<div class="text-uppercase"><i class="fas fa-comments"></i> post a comment</div>
 			<div>1 comment:</div>
 		</div>
-		<div class="comment-box comment-list p-3">
-			<div class="comment-box comment-item">
-				<img class="rounded-circle comment-item image img-fluid" src="/images/music1.jpg">
+		<div class="comment-box comment-list">
+			<div class="comment-box comment-item mb-2">
+				<div class="comment-item image-container">
+					<img class="comment-item image img-fluid" src="/images/music1.jpg">
+				</div>
 				<div class="comment-item card">
 				  <div class="comment-item card-header">
 				    <span class="comment-item user-name">Usercommenter</span>
@@ -140,10 +142,15 @@
 				    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
 				    <a href="#" class="btn btn-secondary rounded-0"><i class="fas fa-reply"></i> Reply</a>
 				  </div>
+				</div>
+				<a class="reply-list-button text-dark" data-toggle="collapse" href="#reply-list1"><i class="fas fa-caret-down"></i> Replies</a>
 
-				  <div class="reply-list p-3">
-				  	<div class="comment-box reply-item">
-						<img class="rounded-circle comment-item image img-fluid" src="/images/music1.jpg">
+				<div class="reply-list collapse" id="reply-list1">
+
+				  	<div class="comment-box reply-item mb-2">
+						<div class="comment-item image-container">
+							<img class="comment-item image img-fluid" src="/images/music1.jpg">
+						</div>
 						<div class="comment-item card">
 						  <div class="comment-item card-header">
 						    <span class="comment-item user-name">Usercommenter</span>
@@ -154,12 +161,76 @@
 						  </div>
 						</div>
 					</div>
-				  </div>{{-- end reply-list --}}
+					<div class="comment-box reply-item mb-2">
+						<div class="comment-item image-container">
+							<img class="comment-item image img-fluid" src="/images/music1.jpg">
+						</div>
+						<div class="comment-item card">
+						  <div class="comment-item card-header">
+						    <span class="comment-item user-name">Usercommenter</span>
+						    <span class="comment-item head-time-posted"><i class="far fa-clock"></i> 1 year ago</span>
+						  </div>
+						  <div class="card-body">
+						    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+						  </div>
+						</div>
+					</div>
 
-				</div>
+				  </div>{{-- end reply-list --}}
 
 			</div>{{-- end comment-item --}}
 
+			<div class="comment-box comment-item mb-2">
+				<div class="comment-item image-container">
+					<img class="comment-item image img-fluid" src="/images/music1.jpg">
+				</div>
+				<div class="comment-item card">
+				  <div class="comment-item card-header">
+				    <span class="comment-item user-name">Usercommenter</span>
+				    <span class="comment-item head-time-posted"><i class="far fa-clock"></i> 1 year ago</span>
+				  </div>
+				  <div class="card-body">
+				    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+				    <a href="#" class="btn btn-secondary rounded-0"><i class="fas fa-reply"></i> Reply</a>
+				  </div>
+				</div>
+				<a class="reply-list-button text-dark" data-toggle="collapse" href="#reply-list"><i class="fas fa-caret-down"></i> Replies</a>
+
+				<div class="reply-list collapse" id="reply-list">
+
+				  	<div class="comment-box reply-item mb-2">
+						<div class="comment-item image-container">
+							<img class="comment-item image img-fluid" src="/images/music1.jpg">
+						</div>
+						<div class="comment-item card">
+						  <div class="comment-item card-header">
+						    <span class="comment-item user-name">Usercommenter</span>
+						    <span class="comment-item head-time-posted"><i class="far fa-clock"></i> 1 year ago</span>
+						  </div>
+						  <div class="card-body">
+						    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+						  </div>
+						</div>
+					</div>
+					<div class="comment-box reply-item mb-2">
+						<div class="comment-item image-container">
+							<img class="comment-item image img-fluid" src="/images/music1.jpg">
+						</div>
+						<div class="comment-item card">
+						  <div class="comment-item card-header">
+						    <span class="comment-item user-name">Usercommenter</span>
+						    <span class="comment-item head-time-posted"><i class="far fa-clock"></i> 1 year ago</span>
+						  </div>
+						  <div class="card-body">
+						    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+						  </div>
+						</div>
+					</div>
+
+				  </div>{{-- end reply-list --}}
+
+			</div>{{-- end comment-item --}}
+			<div><a href="#" class="btn btn-secondary rounded-0"><i class="fas fa-reply"></i> Add Comment</a></div>
 		</div>{{-- end comment-lsit --}}
 
 	</div>

@@ -1,4 +1,4 @@
-<div class="aside outer-container border-left border-secondary pl-3">
+<div class="aside outer-container border-left border-muted pl-3">
 
 	<div class="aside social-counter inner-container">
 		<div class="social-counter header">
