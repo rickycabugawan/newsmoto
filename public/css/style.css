@@ -1,4 +1,4 @@
-------template topbar styling--------*/
+/*------template topbar styling--------*/
 body {
 	background-image: url(/images/whirlpool.png);
 }
@@ -1035,6 +1035,24 @@ a:hover {
 	grid-gap: 10px;
 }
 
+.comment-box.head {
+	display: grid;
+	grid-template-columns: auto auto 1fr;
+	grid-gap: 10px;
+	
+}
+.comment-box.head div:first-child {
+	background-color: var(--orange);
+	grid-column: 1 / span 2;
+	font-weight: 600;
+	color: var(--light);
+}
+
+.comment-box.head div:last-child {
+	grid-column: 1 / span 1;
+}
+
+
 .comment-item.image-container {
 	grid-row: 1 /-1;
 	grid-column: 1 / span 1;
@@ -1049,6 +1067,23 @@ a:hover {
 	object-position: center center;
 	width: auto;
 	height: 100%;
+}
+
+.comment-item.card-header {
+	display: grid;
+	grid-template-columns: auto auto;
+	justify-content: space-between;
+}
+
+.comment-button-group {
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: auto auto;
+	justify-content: flex-end;
+}
+
+.reply-list .comment-button-group{
+	grid-template-columns: auto;
 }
 
 .reply-list,

@@ -57,7 +57,6 @@
 		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</blockquote>
-		<img src="">
 	</div>{{-- end article-body --}}
 	<hr>
 	<div class="card article article-labels rounded-0 p-2 my-4">
@@ -125,8 +124,8 @@
 
 	<div class="card article comment-box rounded-0 p-3">
 		<div class="comment-box head">
-			<div class="text-uppercase"><i class="fas fa-comments"></i> post a comment</div>
-			<div>1 comment:</div>
+			<div class="text-uppercase p-2"><i class="fas fa-comments"></i> post a comment</div>
+			<div class="comment-count p-2">1 comment:</div>
 		</div>
 		<div class="comment-box comment-list">
 			<div class="comment-box comment-item mb-2">
@@ -140,7 +139,10 @@
 				  </div>
 				  <div class="card-body">
 				    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-				    <a href="#" class="btn btn-secondary rounded-0"><i class="fas fa-reply"></i> Reply</a>
+				    <div class="comment-button-group">
+					    <a href="#" class="btn btn-sm btn-secondary rounded-0"><i class="fas fa-reply"></i> Reply</a>
+					    <a href="#" class="btn btn-sm btn-secondary rounded-0"><i class="fas fa-trash-alt"></i></i> Delete</a>
+				    </div>
 				  </div>
 				</div>
 				<a class="reply-list-button text-dark" data-toggle="collapse" href="#reply-list1"><i class="fas fa-caret-down"></i> Replies</a>
@@ -158,6 +160,9 @@
 						  </div>
 						  <div class="card-body">
 						    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+						    <div class="comment-button-group">
+							    <a href="#" class="btn btn-sm btn-secondary rounded-0"><i class="fas fa-trash-alt"></i></i> Delete</a>
+						    </div>
 						  </div>
 						</div>
 					</div>
@@ -191,7 +196,10 @@
 				  </div>
 				  <div class="card-body">
 				    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-				    <a href="#" class="btn btn-secondary rounded-0"><i class="fas fa-reply"></i> Reply</a>
+				    <div class="comment-button-group">
+					    <a href="#" class="btn btn-sm btn-secondary rounded-0"><i class="fas fa-reply"></i> Reply</a>
+					    <a href="#" class="btn btn-sm btn-secondary rounded-0"><i class="fas fa-trash-alt"></i></i> Delete</a>
+				    </div>
 				  </div>
 				</div>
 				<a class="reply-list-button text-dark" data-toggle="collapse" href="#reply-list"><i class="fas fa-caret-down"></i> Replies</a>
@@ -230,7 +238,7 @@
 				  </div>{{-- end reply-list --}}
 
 			</div>{{-- end comment-item --}}
-			<div><a href="#" class="btn btn-secondary rounded-0"><i class="fas fa-reply"></i> Add Comment</a></div>
+			<div><a href="#" class="btn btn-sm btn-secondary rounded-0"><i class="fas fa-reply"></i> Add Comment</a></div>
 		</div>{{-- end comment-lsit --}}
 
 	</div>
