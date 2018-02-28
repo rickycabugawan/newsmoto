@@ -203,7 +203,7 @@ a:hover {
 }
 .news.news-item.trending:hover .news-item.details-container {
 	transform: translateY(0px);
-	text-shadow: 1px 1px black;
+	/*text-shadow: 1px 1px black;*/
 }
 
 .news-item.details-container{
@@ -229,7 +229,6 @@ a:hover {
 }
 
 .trending .news-item.date {
-	background-color: var(--dark);
 	color: var(--light);
 }
 
@@ -260,13 +259,24 @@ a:hover {
 .news-item.category a {
 	text-decoration: none;
 }
-.news-item.title{
+
+.trending .news-item.title{
 	grid-column: 1 / -1;
 	grid-row: 2 / span 1;
 	font-size: 18px;
 	font-weight: 600;
-	/*text-shadow: 1px 1px black;*/
+	text-shadow: 1px 1px black;
 }
+
+.news-item.title{
+	grid-column: 1 / -1;
+	grid-row: 2 / span 1;
+	font-size: 16px;
+	font-weight: 600;
+	text-shadow: 1px 1px black;
+}
+
+
 .news-item.preview.text{
 	grid-column: 1 / -1;
 	grid-row: 4 / span 1;
@@ -275,7 +285,7 @@ a:hover {
 	color: var(--light);
 	font-weight: 600;
 	overflow: none;
-	/*display: none;*/
+	max-height: 60px;
 }
 
 .news-item.date-posted {
@@ -321,13 +331,14 @@ a:hover {
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: auto auto auto;
 	grid-gap: 15px;
-
 }
 
 .news.music .news-item.large,
 .music.news.common.header .header-title,
 .music.news.common.header .more,
 .music .news-item.common.date,
+.news-item.music.date,
+.news-item.music.category,
 .news.music .news-item.large {
 	background-color: var(--orange);
 }
@@ -345,6 +356,10 @@ a:hover {
 .music.news-item.common.small:not(.trending):nth-child(4) {
 	grid-column: 2 / span 1;
 	grid-row: 3 / span 1;
+}
+
+.music .news-item.common.image {
+	background-position: center top;
 }
 
 /*-----------news-music------------*/
@@ -373,6 +388,8 @@ a:hover {
 .sports.news.common.header .header-title,
 .sports.news.common.header .more,
 .sports .news-item.common.date,
+.news-item.sports.date,
+.news-item.sports.category,
 .news.sports .news-item.large {
 	background-color: var(--yellow);
 }
@@ -403,6 +420,8 @@ a:hover {
 .entertainment.news.common.header .header-title,
 .entertainment.news.common.header .more,
 .entertainment .news-item.common.date,
+.news-item.entertainment.date,
+.news-item.entertainment.category,
 .news.entertainment .news-item.large {
 	background-color: var(--blue);
 }
@@ -432,6 +451,8 @@ a:hover {
 .business.news.common.header .header-title,
 .business.news.common.header .more,
 .business .news-item.common.date,
+.news-item.business.date,
+.news-item.business.category,
 .news.business .news-item.large {
 	background-color: var(--green);
 }
@@ -463,6 +484,8 @@ a:hover {
 .tech.news.common.header .header-title,
 .tech.news.common.header .more,
 .tech .news-item.common.date,
+.news-item.tech.date,
+.news-item.tech.category,
 .news.tech .news-item.large {
 	background-color: var(--purple);
 }
@@ -520,6 +543,8 @@ a:hover {
 .movies.news.common.header .header-title,
 .movies.news.common.header .more,
 .movies .news-item.common.date,
+.news-item.movies.date,
+.news-item.movies.category,
 .news.movies .news-item.large {
 	background-color: var(--cyan);
 }
@@ -549,6 +574,8 @@ a:hover {
 .lifestyle.news.common.header .header-title,
 .lifestyle.news.common.header .more,
 .lifestyle .news-item.common.date,
+.news-item.lifestyle.date,
+.news-item.lifestyle.category,
 .news.lifestyle .news-item.large {
 	background-color: var(--red);
 }
@@ -617,7 +644,7 @@ a:hover {
 .news-item.common.category {
 	grid-column: 1 / span 2;
 	grid-row: 3 / span 1;
-	background-color: var(--dark);
+	/*background-color: var(--dark);*/
 	text-decoration: none;
 	z-index: 1;
 }
@@ -678,6 +705,9 @@ a:hover {
 .smaller .news-item.common.title{
 	grid-column: 2 / -1;
 	grid-row:  1 / span 1;
+	font-size: 14px;
+	font-weight: 600;
+	text-shadow: none;
 }
 .smaller .news-item.common.title a {
 	color: var(--dark);
@@ -842,7 +872,10 @@ a:hover {
 	filter: none;
 }
 
-
+.most-list .news-item.common.inner-container:hover .news-item.common.image {
+	filter: none;
+	transform: none;
+}
 
 
 /*------------------home-aside---------------------*/
@@ -854,7 +887,7 @@ a:hover {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: auto;
-	height: 600px;
+	/*height: 600px;*/
 	grid-gap: 30px;
 	background-color: #222;
 	border-top: 3px solid var(--orange);
@@ -914,6 +947,7 @@ a:hover {
 .content-list.item.random {
 	grid-column: 3 / span 1;
 }
+
 /*------------------home-content-list---------------------*/
 /*-------------------article-main------------------------*/
 
@@ -954,7 +988,7 @@ a:hover {
 .article.article-head-image {
 	grid-template-columns: auto;
 	grid-template-rows: auto;
-	justify-items:stretch;
+	justify-items:center;
 	margin-bottom: 20px;
 }
 
@@ -1092,4 +1126,88 @@ a.reply-list-button {
 	text-decoration: none;
 }
 
-/*------------------article-comment------------------------
+/*------------------article-comment----------------------*/
+/*-------------------article-list--------------------*/
+.articles-list-container {
+	grid-row: 4 / -1;
+	grid-column: 1 / span 4;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-rows: auto 1fr;
+
+}
+
+.articles-list.header.card {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	justify-items: center;
+	align-content: center;
+	color: var(--secondary);
+	grid-row: 1 / span 1;
+}
+
+.articles-list.category {
+	font-weight: 700;
+}
+
+.articles-list-main {
+	display: grid;
+	grid-gap: 50px;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(autofill,auto);
+}
+
+.articles-list-main .news-item.common.large:not(.trending) {
+	grid-column: 1 / -1;
+	grid-row: span 1 / span 1;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: 3fr 4fr;
+	grid-template-rows: auto;
+	min-height: 200px;
+}
+
+.articles-list-main .news-item.common.inner-container {
+	grid-row: 1 / -1;
+	grid-template-rows: auto 1fr auto;
+	grid-column: 1 / span 1;
+}
+
+.articles-list-main .news-item.common.title a{
+	color: var(--dark);
+	text-shadow: none;
+	font-size: 18px;
+	font-weight: 700;
+	grid-row: 1 / span 1;
+}
+
+.articles-list-main .news-item.common.title {
+	grid-row: 1 / span 1;
+}
+.articles-list-main .news-item.common.preview.text {
+	color: var(--secondary);
+	grid-row: span 1 / -3;
+}
+.articles-list-main .news-item.common.btn {
+	grid-row: span 1 / -2;
+}
+
+.articles-list-main .inner-container2 {
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: auto auto 1fr;
+	grid-template-rows: auto auto 1fr auto auto;
+}
+.articles-list-main .news-item.common.date-posted {
+	grid-column: 1 / span 1;
+	grid-row:  2 / span 1;
+}
+
+
+.articles-list-main .news-item.common.author {
+	grid-column: 2 / span 1;
+	grid-row:  2 / span 1;
+}
+
+
+/*-------------------article-list--------------------*/

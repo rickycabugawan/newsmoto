@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Comment;
+use App\FeaturedArticle;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+use Auth;
 
 class ArticleController extends Controller
 {
@@ -46,7 +50,10 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        //
+        $related_articles = Article::where('category',$article->category)->whereNotIn('id',$article)->get()->random(3);
+
+        $this_article = $article;
+         return view('article',compact('this_article','related_articles'));
     }
 
     /**
@@ -83,8 +90,16 @@ class ArticleController extends Controller
         //
     }
 
-    public function homeItems()
+    public function listHomeItems()
     {
-        
+         return view('homepage');
+    }
+
+    public function listCategory($category)
+    {   
+
+        // dump($category);
+        $category_articles = Article::where('category',$category)->latest()->get();
+         return view('articles-list',compact('category','category_articles'));
     }
 }

@@ -75,45 +75,46 @@
 		<div class="tab-content" id="nav-tabContent">
 			<div class="tab-pane fade show active most-list item-container" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 
-				@for ($i = 0; $i <5; $i++)
+				@foreach($most_recent_articles as $article)
 					<div class="news most-list common news-item smaller py-3">
 						<div class="news-item common inner-container mr-3">
-							<div class="news-item common image" style="background-image:url(/images/music2.jpg)"></div>
+							<div class="news-item common image" style="background-image:url({{$article->image}})"></div>
 						</div>
-							<div class="news-item common title"><a href="">Lorem ipsum dolor sit amet</a></div>
-							<div class="news-item common date-posted"><i class="far fa-calendar-alt"></i>Feb 22, 2018</div>
-							<div class="news-item common author"><i class="fas fa-user"></i>Admin</div>
+							<div class="news-item common title"><a href="/articles/{{$article->id}}">{{$article->title}}</a></div>
+							<div class="news-item common date-posted"><i class="far fa-calendar-alt"></i>{{$article->created_at->toFormattedDateString()}}</div>
+							<div class="news-item common author"><i class="fas fa-user"></i>{{strtok($article->user->name," ")}}</div>
 					</div>
-				@endfor
+				@endforeach
 				
 			</div>
 
 			<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-				@for ($i = 0; $i <5; $i++)
+
+				@foreach($most_popular_articles as $article)
 					<div class="news most-list common news-item smaller py-3">
 						<div class="news-item common inner-container mr-3">
-							<div class="news-item common image" style="background-image:url(/images/music4.jpg)"></div>
+							<div class="news-item common image" style="background-image:url({{$article->image}})"></div>
 						</div>
-							<div class="news-item common title"><a href="">Lorem ipsum dolor sit amet</a></div>
-							<div class="news-item common date-posted"><i class="far fa-calendar-alt"></i>Feb 22, 2018</div>
-							<div class="news-item common author"><i class="fas fa-user"></i>Admin</div>
+							<div class="news-item common title"><a href="/articles/{{$article->id}}">{{$article->title}}</a></div>
+							<div class="news-item common date-posted"><i class="fas fa-comments"></i></i>{{$article->comment->count()}} Comments</div>
+							<div class="news-item common author"><i class="fas fa-user"></i>{{strtok($article->user->name," ")}}</div>
 					</div>
-				@endfor
+				@endforeach
 
 			</div>
 
 			<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"
 			>
-				@for ($i = 0; $i <5; $i++)
+				@foreach($most_recent_comments as $comment)
 					<div class="news most-list common comment news-item smaller py-3">
-						<div class="news-item common inner-container mx-3">
-							<div class="news-item common image comment rounded-circle" style="background-image:url(/images/music1.jpg)"></div>
+						<div class="news-item common inner-container mx-2">
+							<div class="border border-dark news-item common image comment rounded-circle" style="background-image:url(/images/account.png)"></div>
 						</div>
-							<div class="news-item common title"><a href="">username</a></div>
-							<div class="news-item common date-posted">"hello world hello work"</div>
+							<div class="news-item common title"><a href="/articles/{{$comment->article->id}}#cmt{{$comment->id}}">{{strtok($comment->user->name," ")}}</a></div>
+							<div class="news-item common date-posted">"{{$comment->comment_content}}"</div>
 							
 					</div>
-				@endfor
+				@endforeach
 
 			</div>
 		</div>
@@ -124,25 +125,25 @@
 			<h5 class="text-uppercase m-0"><i class="fas fa-align-left"></i> category</h5>
 		</div>
 		<div class="category-list body my-2">
-			<a href="" class="category-item my-1">
+			<a href="/label/business" class="category-item my-1">
 				<span class="px-2 py-1 text-secondary"><i class="fas fa-tag"></i></span><span class="text-uppercase">business</span><span class="category-item counter px-2 py-1">4</span>
 			</a>
-			<a href="" class="category-item my-1" >
+			<a href="/label/music" class="category-item my-1" >
 				<span class="px-2 py-1 text-secondary"><i class="fas fa-tag"></i></span><span class="text-uppercase">music</span><span class="category-item counter px-2 py-1">4</span>
 			</a>
-			<a href="" class="category-item my-1" >
+			<a href="/label/entertainment" class="category-item my-1" >
 				<span class="px-2 py-1 text-secondary"><i class="fas fa-tag"></i></span><span class="text-uppercase">entertainment</span><span class="category-item counter px-2 py-1">4</span>
 			</a>
-			<a href="" class="category-item my-1" >
+			<a href="/label/lifestyle" class="category-item my-1" >
 				<span class="px-2 py-1 text-secondary"><i class="fas fa-tag"></i></span><span class="text-uppercase">lifestyle</span><span class="category-item counter px-2 py-1">4</span>
 			</a>
-			<a href="" class="category-item my-1" >
+			<a href="/label/movies" class="category-item my-1" >
 				<span class="px-2 py-1 text-secondary"><i class="fas fa-tag"></i></span><span class="text-uppercase">movies</span><span class="category-item counter px-2 py-1">4</span>
 			</a>
-			<a href="" class="category-item my-1" >
+			<a href="/label/sports" class="category-item my-1" >
 				<span class="px-2 py-1 text-secondary"><i class="fas fa-tag"></i></span><span class="text-uppercase">sports</span><span class="category-item counter px-2 py-1">4</span>
 			</a>
-			<a href="" class="category-item my-1" >
+			<a href="/label/tech" class="category-item my-1" >
 				<span class="px-2 py-1 text-secondary"><i class="fas fa-tag"></i></span><span class="text-uppercase">tech</span><span class="category-item counter px-2 py-1">4</span>
 			</a>
 		</div>

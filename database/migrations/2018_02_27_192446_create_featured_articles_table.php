@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCommentsTable extends Migration
+class CreateFeaturedArticlesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,15 @@ class CreateCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('comments', function (Blueprint $table) {
+        Schema::create('featured_articles', function (Blueprint $table) {
             $table->increments('id');
-            $table->longText('comment_content');
             $table->timestamps();
         });
-        Schema::table('comments', function($table){
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')
+        Schema::table('featured_articles', function($table){
+            $table->integer('article_id')->unsigned();
+            $table->foreign('article_id')
                 ->references('id')
-                ->on('users')
+                ->on('articles')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
@@ -35,6 +34,6 @@ class CreateCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('featured_articles');
     }
 }

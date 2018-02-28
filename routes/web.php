@@ -11,12 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-});
-
-Route::resource('article', 'ArticleController');
-
+Route::get('/','ArticleController@listHomeItems');
+Route::get('/label/{category}','ArticleController@listCategory');
+Route::resource('articles', 'ArticleController');
 
 Auth::routes();
 

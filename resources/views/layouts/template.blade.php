@@ -19,9 +19,27 @@
 	<div class="body-container mx-lg-4 bg-light">
 		<div class="topbar px-4 py-1">
 			<div class="topbar links">
-				<!-- <a href="" class="text-uppercase">home</a> -->
-				<a href="" class="text-uppercase">login</a>
-				<a href="" class="text-uppercase">register</a>
+				@auth
+                    <div class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">Logout
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </div>
+                @else
+                    <a href="{{ route('login') }}" class="text-uppercase">Login</a>
+                    <a href="{{ route('register') }}" class="text-uppercase">Register</a>
+                @endauth
 			</div>
 			<div class="topbar social text-light">
 				<i class="fab fa-facebook-square fa-2x"></i>
@@ -36,28 +54,28 @@
 				<div class="header name text-uppercase"><h1 class="header big m-0">newsmoto</h1><small>your online news magazine</small></div>
 			</div><!-- end header -->
 			<div class="nav text-light">
-				<a href="" class="nav link p-3">
+				<a href="/" class="nav link p-3">
 					<i class="fas fa-home fa-2x"></i>
 				</a>
-				<a href="" class="nav link p-3">
+				<a href="/label/business" class="nav link p-3">
 					<h5 class="m-0">Business</h5>
 				</a>
-				<a href="" class="nav link p-3">
+				<a href="/label/music" class="nav link p-3">
 					<h5 class="m-0">Music</h5>
 				</a>
-				<a href="" class="nav link p-3">
+				<a href="/label/movies" class="nav link p-3">
 					<h5 class="m-0">Movies</h5>
 				</a>
-				<a href="" class="nav link p-3">
+				<a href="/label/lifestyle" class="nav link p-3">
 					<h5 class="m-0">Lifestyle</h5>
 				</a>
-				<a href="" class="nav link p-3">
+				<a href="/label/sports" class="nav link p-3">
 					<h5 class="m-0">Sports</h5>
 				</a>
-				<a href="" class="nav link p-3">
+				<a href="/label/tech" class="nav link p-3">
 					<h5 class="m-0">Tech</h5>
 				</a>
-				<a href="" class="nav link p-3">
+				<a href="/label/entertainment" class="nav link p-3">
 					<h5 class="m-0">Entertainment</h5>
 				</a>
 				<a href="" class="nav button random p-3">
