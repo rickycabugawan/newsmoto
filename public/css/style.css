@@ -102,18 +102,42 @@ a:hover {
 
 .main .nav {
 	display: grid;
+	grid-template-columns: 1fr auto;
+	align-items: center;
+	background-color: #333333;
+	overflow: hidden;
+}
+
+.nav .nav-container {
+	display: grid;
 	grid-template-columns: repeat(9, auto) 1fr auto auto;
 	align-items: center;
 	background-color: #333333;
+	grid-column: 1 / -3;
+	grid-row: 1 / -1;
 }
-
 .nav.button.random {
 	grid-column: span 1 / -2; 
 }
 
 .nav.button.search {
-	grid-column: span 1 / -1; 
+	grid-column: span 1 / -1;
+	z-index: 10;
+
 }
+
+.nav.button.search,
+.nav.button.random {
+	border:none;
+	color: var(--light);
+}
+
+.nav.button.search:focus,
+.nav.button.random:focus,
+.search-box {
+	outline:none;
+}
+
 
 .nav.button.random:hover,
 .nav.button.search:hover {
@@ -121,10 +145,59 @@ a:hover {
 	transition: background-color 0.5s;
 }
 
+.nav .search-box {
+	grid-row: 1 / span 1;
+	grid-column: 1 / -2;
+	z-index: 5;
+	background-color: var(--orange);
+	resize: none;
+	color: var(--light);
+	font-size: 28px;
+	border:none;
+	position: relative;
+	left: 100%;
+}
+
+.nav .search-box::placeholder {
+	color: var(--light);
+}
 
 .main .breaking {
 	display: grid;
 	grid-template-columns: auto 1fr;
+	visibility: hidden;
+}
+
+.breaking.carousel {
+	display: grid;
+	grid-gap: 20px;
+}
+
+.breaking.carousel-item {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-template-rows: auto;
+	background-color: #F7F7F7;
+}
+.breaking.carousel-item img{
+	grid-column: 1 / span 1;
+	height: 40px;
+	width: auto;
+}
+
+.breaking.carousel-item .category {
+	grid-column: 2 / span 1;
+	text-decoration: none;
+}
+
+.breaking.carousel-item .title {
+	grid-column: 3/ span 1;
+	display: block;
+	 width: auto;
+	 overflow: hidden;
+	 white-space: nowrap;
+	 text-overflow: ellipsis;
+	 color: var(--dark);
 }
 
 .main .breaking .icon {
@@ -1065,12 +1138,12 @@ a:hover {
 .comment-box.comment-item,
 .comment-box.reply-item {
 	grid-template-columns: auto 1fr;
-	grid-row: auto 1fr;
+	grid-template-rows: auto 1fr;
 	grid-gap: 10px;
 }
 
 .comment-item.add-reply {
-	grid-column: 1 / -1;
+	grid-column: span 1 / -1;
 }
 
 textarea.add-reply {
@@ -1163,7 +1236,7 @@ a.reply-list-button {
 	display: grid;
 	grid-gap: 50px;
 	grid-template-columns: 1fr;
-	grid-template-rows: repeat(autofill,auto);
+	grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 .articles-list-main .news-item.common.large:not(.trending) {

@@ -12,6 +12,8 @@
 
     <!-- Styles -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <link href="{{ asset('slick/slick.css') }}" rel="stylesheet">
+    <link href="{{ asset('slick/slick-theme.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
@@ -37,9 +39,11 @@
                         </div>
                     </div>
                 @else
-                    <a href="{{ route('login') }}" class="text-uppercase">Login</a>
-                    <a href="{{ route('register') }}" class="text-uppercase">Register</a>
-                @endauth
+                    <a href="#" data-toggle="modal" data-target="#loginModal" class="text-uppercase">Login</a>
+                    <a href="#" data-toggle="modal" data-target="#registerModal" class="text-uppercase">Register</a>
+                    @include('partials.login-modal')
+                    @include('partials.register-modal')
+                @endauth	
 			</div>
 			<div class="topbar social text-light">
 				<i class="fab fa-facebook-square fa-2x"></i>
@@ -54,6 +58,7 @@
 				<div class="header name text-uppercase"><h1 class="header big m-0">newsmoto</h1><small>your online news magazine</small></div>
 			</div><!-- end header -->
 			<div class="nav text-light">
+				<div class="nav-container">
 				<a href="/" class="nav link p-3">
 					<i class="fas fa-home fa-2x"></i>
 				</a>
@@ -78,17 +83,27 @@
 				<a href="/label/entertainment" class="nav link p-3">
 					<h5 class="m-0">Entertainment</h5>
 				</a>
-				<a href="" class="nav button random p-3">
+				<a href="/random" class="nav button random p-3">
 					<i class="fas fa-random fa-2x"></i>
 				</a>
-				<a href="" class="nav button search p-3">
+				</div>
+				<input type="text" name="search" class="search-box px-3 py-2" placeholder="Enter your search term..."></input>
+				<button type="button" class="nav button search p-3">
 					<i class="fas fa-search fa-2x"></i>
-				</a>
+				</button>
 			</div><!-- end nav -->
 
 			<div class="breaking">
 				<div class="breaking icon text-light text-uppercase p-2"><i class="fas fa-bolt"></i> Breaking news</div>
-				<div class="breaking carousel"></div>
+				<div class="breaking carousel">
+					@foreach($most_recent_articles as $article)
+						<span class="pr-3 breaking carousel-item news">
+							<img class="m-1" src="{{$article->image}}">
+							<a href="/label/{{$article->category}}" class="p-1 text-uppercase news-item category {{$article->category}}"><small>{{$article->category}}</small></a>
+							<a href="/articles/{{$article->id}}" class="m-1 breaking carousel-item title"><small>{{$article->title}}</small></a>
+						</span>
+					@endforeach
+				</div>
 			</div>
 
 			@yield('content')
@@ -100,11 +115,13 @@
 			Copyright &copy rickycabugawan 2018
 		</div><!-- end footer -->
 
-	</div><!-- end body-container -->
+	</div><!-- end body-container -->s
 
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('tinymce/tinymce.min.js') }}"></script>
+    <script src="{{ asset('slick/slick.min.js') }}"></script>
     <script src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>

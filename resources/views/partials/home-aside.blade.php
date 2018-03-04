@@ -156,9 +156,9 @@
 		<div class="blog-archive body mt-2">
 			<select class="archive selection my-2">
 				<option selected disabled>Select Month</option>
-				<option>December(20)</option>
-				<option>January(20)</option>
-				<option>February(20)</option>
+				@foreach($archives as $archive)
+				<option>{{$archive->created_at->format('M Y')}}</option>
+				@endforeach
 			</select>
 		</div>
 

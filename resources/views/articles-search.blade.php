@@ -2,10 +2,10 @@
 
 
 @section('title')
-	{{ucfirst($category)}} - Articles
+	Search
 @endsection
 
 
 @section('content')
-			@include('partials.articles-list')
+			@include('partials.articles-search')
 @endsection

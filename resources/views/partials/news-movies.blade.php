@@ -1,7 +1,7 @@
 <div class="news movies">
 	<div class="news movies common header">
-		<a href="" class="text-uppercase header-title px-2 py-1"><i class="fas fa-rss-square"></i> movies</a>
-		<a href="" class="more px-1 my-2 text-uppercase">more <i class="fas fa-angle-right"></i></a>
+		<a href="/label/movies" class="text-uppercase header-title px-2 py-1"><i class="fas fa-rss-square"></i> movies</a>
+		<a href="/label/movies" class="more px-1 my-2 text-uppercase">more <i class="fas fa-angle-right"></i></a>
 	</div>
 	<div class="news movies items-container">
 

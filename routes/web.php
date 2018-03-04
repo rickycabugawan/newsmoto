@@ -13,8 +13,11 @@
 
 Route::get('/','ArticleController@listHomeItems');
 Route::get('/label/{category}','ArticleController@listCategory');
+Route::get('/search/{search}','ArticleController@listSearch');
+Route::get('/archive/{archive}','ArticleController@listArchive');
+Route::get('/random','ArticleController@randomArticle');
 Route::resource('articles', 'ArticleController');
-
+Route::resource('comments', 'CommentController');
+Route::resource('replies', 'ReplyController');
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');

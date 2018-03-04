@@ -2,7 +2,7 @@
 
 
 @section('title')
-	NewsMOTO-Article
+	{{$this_article->title}}
 @endsection
 
 

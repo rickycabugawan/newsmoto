@@ -1,7 +1,7 @@
 <div class="news tech">
 	<div class="news tech common header">
-		<a href="" class="text-uppercase header-title px-2 py-1"><i class="fas fa-rss-square"></i> tech</a>
-		<a href="" class="more px-1 my-2 text-uppercase">more <i class="fas fa-angle-right"></i></a>
+		<a href="/label/tech" class="text-uppercase header-title px-2 py-1"><i class="fas fa-rss-square"></i> tech</a>
+		<a href="/label/tech" class="more px-1 my-2 text-uppercase">more <i class="fas fa-angle-right"></i></a>
 	</div>
 	<div class="news tech items-container">
 		@foreach($tech_articles as $article)

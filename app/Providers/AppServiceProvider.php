@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Article;
 use App\Comment;
+use Carbon\Carbon;
 use App\FeaturedArticle;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
@@ -20,6 +21,10 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
 
+        $all_articles = Article::all()->sortByDesc('created_at');
+        // $archive = $all_articles->unique('created_at')->format('M');
+
+        $archives = $all_articles->unique(function ($item) { return $item['created_at']->format('M Y'); });
 
         $featured_articles_id = FeaturedArticle::pluck('article_id');
         // dd($articles);
@@ -54,7 +59,8 @@ class AppServiceProvider extends ServiceProvider
             'most_popular_articles',
             'most_recent_articles',
             'most_recent_comments',
-            'random_posts'));
+            'random_posts',
+            'archives'));
     }
 
     /**

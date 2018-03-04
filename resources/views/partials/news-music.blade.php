@@ -1,7 +1,7 @@
 <div class="news music">
 	<div class="news music common header">
-		<a href="" class="text-uppercase header-title px-2 py-1"><i class="fas fa-rss-square"></i> Music</a>
-		<a href="" class="more px-1 my-2 text-uppercase">more <i class="fas fa-angle-right"></i></a>
+		<a href="/label/music" class="text-uppercase header-title px-2 py-1"><i class="fas fa-rss-square"></i> Music</a>
+		<a href="/label/music" class="more px-1 my-2 text-uppercase">more <i class="fas fa-angle-right"></i></a>
 	</div>
 
 	@foreach($music_articles->take(1) as $article)

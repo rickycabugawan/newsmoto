@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Reply;
 use Illuminate\Http\Request;
+use Auth;
 
 class ReplyController extends Controller
 {
@@ -35,7 +36,11 @@ class ReplyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $new_reply = new Reply();
+        $new_reply->user_id = Auth::user()->id;
+        $new_reply->reply_content = $request->content;
+        $new_reply->comment_id = $request->comment_id;
+        $new_reply->save();
     }
 
     /**
@@ -80,6 +85,7 @@ class ReplyController extends Controller
      */
     public function destroy(Reply $reply)
     {
-        //
+        $delete = Reply::find($reply->id);
+        $delete->delete();
     }
 }

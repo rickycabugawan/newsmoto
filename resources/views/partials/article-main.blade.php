@@ -1,6 +1,6 @@
 
 <div class="article-main">
-
+	    
 	<nav aria-label="breadcrumb">
 	  <ol class="breadcrumb p-2">
 	    <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -18,8 +18,8 @@
 		</div>
 	</div>
 	<hr>
-	<div class="article article-head-image">
-		<img class="img-fluid" src="{{$this_article->image}}">
+	<div class="article article-head-image" contenteditable="true">
+		<img class="img-fluid" src="{{$this_article->image}}" >
 	</div>
 
 	<div class="article article-body">
@@ -91,20 +91,37 @@
 						    	@if(Auth::check())
 								    <button class="btn btn-sm btn-secondary rounded-0" data-toggle="collapse" data-target=".reply{{$comment->id}}"><i class="fas fa-reply"></i> Reply</button>
 								    @if(($comment->user->id == Auth::user()->id)||(Auth::user()->isAdmin))
-								    <button class="btn btn-sm btn-secondary rounded-0"><i class="fas fa-trash-alt"></i> Delete</button>
+								    <button data-index="{{$comment->id}}" class="comment-delete btn btn-sm btn-secondary rounded-0"><i class="fas fa-trash-alt"></i> Delete</button>
 								    @endif
 							    @endif
 						    </div>
 						</div>
 					</div>	
 
+					<div class="comment-box add-reply mb-2 collapse reply{{$comment->id}}" id="reply{{$comment->id}}">
+						<div class="comment-item add-reply card">
+						  <div class="card-body">
+						    <textarea class="add-reply" name="reply-text" placeholder="Enter your reply..."></textarea>
+						    <div class="comment-button-group">
+							    <button class="btn btn-sm reply-publish btn-primary rounded-0" data-index='{{$comment->id}}'><i class="fas fa-pencil-alt"></i> Publish</button>
+					    	</div>
+						  </div>
+						</div>
+					</div>
 
 					@if($comment->reply->count()>0)
 					
-					<a class="reply-list-button text-dark" data-toggle="collapse" href="#reply-list{{$comment->id}}"><i class="fas fa-caret-down"></i> Replies</a>
+
+					<a class="reply-list-button text-dark reply-list-button{{$comment->id}}" data-toggle="collapse" href="#reply-list{{$comment->id}}"><i class="fas fa-caret-down"></i> {{$comment->reply->count()}} 
+						@if($comment->reply->count()>1)
+							{{'replies'}}
+						@else 
+							{{'reply'}}
+						@endif
+					</a>
 					@endif
 
-					<div class="reply-list collapse reply{{$comment->id}}" id="reply-list{{$comment->id}}">
+					<div class="reply-list collapse show" id="reply-list{{$comment->id}}">
 						@foreach($comment->reply->sortBy('created_at') as $reply)
 						<div class="comment-box reply-item mb-2">
 							<div class="comment-item image-container border border-dark">
@@ -120,7 +137,7 @@
 							    <div class="comment-button-group">
 						    	@if(Auth::check())
 								    @if(($reply->user->id == Auth::user()->id)||(Auth::user()->isAdmin))
-								    <button class="btn btn-sm btn-secondary rounded-0"><i class="fas fa-trash-alt"></i> Delete</button>
+								    <button data-index="{{$reply->id}}" data-index-comment="{{$reply->comment->id}}" class="reply-delete btn btn-sm btn-secondary rounded-0"><i class="fas fa-trash-alt"></i> Delete</button>
 								    @endif
 							    @endif
 						    </div>
@@ -129,16 +146,7 @@
 						</div>
 						@endforeach
 
-						<div class="comment-box add-reply mb-2 collapse reply{{$comment->id}}" id="reply{{$comment->id}}">
-							<div class="comment-item add-reply card">
-							  <div class="card-body">
-							    <textarea class="add-reply" placeholder="Enter your reply..."></textarea>
-							    <div class="comment-button-group">
-								    <button class="btn btn-sm btn-secondary rounded-0"><i class="fas fa-pencil-alt"></i> Publish</button>
-						    	</div>
-							  </div>
-							</div>
-						</div>
+						
 
 					</div>{{-- end reply-list --}}
 
@@ -147,21 +155,25 @@
 				</div>{{-- end comment-item --}}
 				@endforeach
 				@endif
-
+			@guest
+			<h4 class="text-center"><a href="#" data-toggle="modal" data-target="#loginModal" class="text-dark">Login</a> or <a href="#" data-toggle="modal" data-target="#registerModal" class="text-dark">Register</a> to Post a Comment</h4>
+			@endguest
+			@if(Auth::check())
 			<div><a data-toggle="collapse" href="#reply{{$this_article->id}}" class="btn btn-sm btn-secondary rounded-0 mb-2"><i class="fas fa-reply"></i> Add Comment</a></div>
 
 			<div class="comment-box add-reply mb-2 collapse" id="reply{{$this_article->id}}">
-							<div class="comment-item add-reply card">
-							  <div class="card-body">
-							    <textarea class="add-reply" placeholder="Enter your comment..."></textarea>
-							    <div class="comment-button-group">
-								    <button class="btn btn-sm btn-secondary rounded-0"><i class="fas fa-pencil-alt"></i> Publish</button>
-						    	</div>
-							  </div>
-							</div>
-						</div>
+				<div class="comment-item add-reply card">
+				  <div class="card-body">
+				    <textarea class="add-reply" name="comment-text" placeholder="Enter your comment..."></textarea>
+				    <div class="comment-button-group">
+					    <button data-index='{{$this_article->id}}' class="btn btn-sm comment-publish btn-primary rounded-0"><i class="fas fa-pencil-alt"></i> Publish</button>
+			    	</div>
+				  </div>
+				</div>
+			</div>
+			@endif
 			
-		</div>{{-- end comment-lsit --}}
+		</div>{{-- end comment-list --}}
 
 	</div>
 
