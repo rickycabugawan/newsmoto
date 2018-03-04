@@ -4,7 +4,7 @@
 	<nav aria-label="breadcrumb">
 	  <ol class="breadcrumb p-2">
 	    <li class="breadcrumb-item"><a href="/">Home</a></li>
-	    <li class="breadcrumb-item"><a href="/{{$this_article->category}}">{{ucfirst($this_article->category)}}</a></li>
+	    <li class="breadcrumb-item"><a href="/label/{{$this_article->category}}">{{ucfirst($this_article->category)}}</a></li>
 	    <li class="breadcrumb-item active">{{$this_article->title}}</li>
 	  </ol>
 	</nav>
@@ -50,7 +50,7 @@
 			<div class="card news sports items-container related rounded-0 p-3 my-2 ">
 
 				@foreach($related_articles as $article)
-				<div class="news {{$article->category}} common news-item small">
+				<div class="news common news-item small">
 					<div class="news-item common inner-container">
 						<div class="news-item common image" style="background-image:url({{$article->image}})"></div>
 						<div class="news-item common {{$article->category}} date px-1 ml-3">
@@ -89,9 +89,9 @@
 					    	<p class="card-text">{{$comment->comment_content}}</p>
 						    <div class="comment-button-group">
 						    	@if(Auth::check())
-								    <a href="#" class="btn btn-sm btn-secondary rounded-0"><i class="fas fa-reply"></i> Reply</a>
+								    <button class="btn btn-sm btn-secondary rounded-0" data-toggle="collapse" data-target=".reply{{$comment->id}}"><i class="fas fa-reply"></i> Reply</button>
 								    @if(($comment->user->id == Auth::user()->id)||(Auth::user()->isAdmin))
-								    <a href="#" class="btn btn-sm btn-secondary rounded-0"><i class="fas fa-trash-alt"></i> Delete</a>
+								    <button class="btn btn-sm btn-secondary rounded-0"><i class="fas fa-trash-alt"></i> Delete</button>
 								    @endif
 							    @endif
 						    </div>
@@ -102,8 +102,9 @@
 					@if($comment->reply->count()>0)
 					
 					<a class="reply-list-button text-dark" data-toggle="collapse" href="#reply-list{{$comment->id}}"><i class="fas fa-caret-down"></i> Replies</a>
+					@endif
 
-					<div class="reply-list collapse" id="reply-list{{$comment->id}}">
+					<div class="reply-list collapse reply{{$comment->id}}" id="reply-list{{$comment->id}}">
 						@foreach($comment->reply->sortBy('created_at') as $reply)
 						<div class="comment-box reply-item mb-2">
 							<div class="comment-item image-container border border-dark">
@@ -119,7 +120,7 @@
 							    <div class="comment-button-group">
 						    	@if(Auth::check())
 								    @if(($reply->user->id == Auth::user()->id)||(Auth::user()->isAdmin))
-								    <a href="#" class="btn btn-sm btn-secondary rounded-0"><i class="fas fa-trash-alt"></i> Delete</a>
+								    <button class="btn btn-sm btn-secondary rounded-0"><i class="fas fa-trash-alt"></i> Delete</button>
 								    @endif
 							    @endif
 						    </div>
@@ -128,15 +129,37 @@
 						</div>
 						@endforeach
 
+						<div class="comment-box add-reply mb-2 collapse reply{{$comment->id}}" id="reply{{$comment->id}}">
+							<div class="comment-item add-reply card">
+							  <div class="card-body">
+							    <textarea class="add-reply" placeholder="Enter your reply..."></textarea>
+							    <div class="comment-button-group">
+								    <button class="btn btn-sm btn-secondary rounded-0"><i class="fas fa-pencil-alt"></i> Publish</button>
+						    	</div>
+							  </div>
+							</div>
+						</div>
+
 					</div>{{-- end reply-list --}}
 
-					@endif
+					
 					
 				</div>{{-- end comment-item --}}
 				@endforeach
 				@endif
 
-			<div><a href="#" class="btn btn-sm btn-secondary rounded-0"><i class="fas fa-reply"></i> Add Comment</a></div>
+			<div><a data-toggle="collapse" href="#reply{{$this_article->id}}" class="btn btn-sm btn-secondary rounded-0 mb-2"><i class="fas fa-reply"></i> Add Comment</a></div>
+
+			<div class="comment-box add-reply mb-2 collapse" id="reply{{$this_article->id}}">
+							<div class="comment-item add-reply card">
+							  <div class="card-body">
+							    <textarea class="add-reply" placeholder="Enter your comment..."></textarea>
+							    <div class="comment-button-group">
+								    <button class="btn btn-sm btn-secondary rounded-0"><i class="fas fa-pencil-alt"></i> Publish</button>
+						    	</div>
+							  </div>
+							</div>
+						</div>
 			
 		</div>{{-- end comment-lsit --}}
 

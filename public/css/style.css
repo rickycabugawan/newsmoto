@@ -387,7 +387,7 @@ a:hover {
 .news.sports .news-item.large,
 .sports.news.common.header .header-title,
 .sports.news.common.header .more,
-.sports .news-item.common.date,
+.sports.news-item.common.date,
 .news-item.sports.date,
 .news-item.sports.category,
 .news.sports .news-item.large {
@@ -1067,6 +1067,15 @@ a:hover {
 	grid-template-columns: auto 1fr;
 	grid-row: auto 1fr;
 	grid-gap: 10px;
+}
+
+.comment-item.add-reply {
+	grid-column: 1 / -1;
+}
+
+textarea.add-reply {
+	width: 100%;
+	resize: none;
 }
 
 .comment-box.head {
