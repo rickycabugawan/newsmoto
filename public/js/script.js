@@ -5,6 +5,7 @@ $('.nav.button.search').click(function() {
 		$(this).prev().animate({left: '100%'});
 	}
 	else
+    
 	$(this).prev().animate({left: '0'});
 	$(this).prev().focus();
 	})
@@ -34,7 +35,25 @@ $('.breaking.carousel').slick({
   	autoplaySpeed: 1,
   	speed:5000,
   	cssEase: 'linear',
-  	draggable: false
+  	draggable: false,
+      responsive: [
+    {
+      breakpoint: 960,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+  
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
 });
 
 $(document).ready(function(){
@@ -127,7 +146,29 @@ $(document).on('click','.reply-delete',function(){
     });
 })
 
+if ($(".nav.button.search").css("position") == "absolute" ){
+        $(".search-box").attr('placeholder','Search...');
+      }
 
 
 
+
+/*----------back2top button---------*/
+
+  //Check to see if the window is top if not then display button
+$(window).scroll(function(){
+    if ($(this).scrollTop() > 200) {
+        $('.back2top').fadeIn();
+    } else {
+        $('.back2top').fadeOut();
+    }
+});
+
+//Click event to scroll to top
+$('.back2top').click(function(){
+    $('html, body').animate({scrollTop : 0},800);
+    return false;
+});
+
+/*-------price range slider----------*/
 

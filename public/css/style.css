@@ -1,3 +1,6 @@
+
+
+
 /*------template topbar styling--------*/
 body {
 	background-image: url(/images/whirlpool.png);
@@ -1293,3 +1296,155 @@ a.reply-list-button {
 
 
 /*-------------------article-list--------------------*/
+
+/*-------back2top---------*/
+.back2top-container {
+	position: fixed;
+	bottom: 2em;
+	right: 2em;
+	display: grid;
+	grid-gap: 10px;
+}
+
+.back2top {
+	display: none;
+	box-shadow: 0 0 5px black;
+	z-index: 10;
+}
+
+/*-------back2top---------*/
+
+@media only screen and (max-width: 960px){
+	.main > .news.music,
+	.main > .news.sports,
+	.main > .news.entertainment,
+	.main > .news.business,
+	.main > .news.tech,
+	.main > .news.movies,
+	.main > .news.lifestyle,
+	.aside.outer-container,
+	.content-list.item.popular,
+	.content-list.item.recent,
+	.content-list.item.random,
+	.article-main,
+	.articles-list-container  {
+		grid-column: 1 / -1;
+	}
+
+	.most-list.news-item.common.smaller,
+	.content-list .news-item.common.smaller {
+		min-height: 150px;
+		/*justify-items: center;*/
+	}
+
+	 
+
+}
+
+@media only screen and (max-width: 480px){
+	.nav.link.d-none {
+		/*width: 0;*/
+	}
+
+	.nav.button.random {
+		grid-column: 4 / span 1;
+	}
+
+	.nav.button.search {
+		position: absolute;
+		right: 0px;
+	}
+
+	.main > .news.trending {
+		grid-template-rows: repeat(5,auto);
+	}
+
+	.news.news-item.trending.large:nth-child(1) {
+		grid-column: 1 / -1;
+		grid-row: 1 / span 1;
+	}
+
+	.news.news-item.trending.large:nth-child(2) {
+		grid-column: 1 / -1;
+		grid-row: 2 / span 1;
+	}
+
+	.news.news-item.trending.small {
+		grid-column: 1 / -1; 
+	}
+
+	.news.news-item.trending.small:nth-child(3) {
+		grid-row: 3 / span 1;
+	}
+	.news.news-item.trending.small:nth-child(4) {
+		grid-row: 4 / span 1;
+	}
+	.news.news-item.trending.small:nth-child(5) {
+		grid-row: 5 / span 1;
+	}
+
+	.header .name {
+		text-align: center;
+	}
+	.news.music.items-container {
+		grid-template-rows: auto auto auto auto;
+	}
+	.news-item.common.large:not(.trending) {
+		grid-column: 1 / -1;
+		grid-row: 1 / span 1;
+	}
+
+	.music.news-item.common.small:not(.trending) {
+		grid-column: 1 / -1;
+	}
+
+	.music.news-item.common.small:not(.trending):nth-child(2) {
+		grid-column: 1 / -1;
+		grid-row: 2 / span 1;
+	}
+
+	.music.news-item.common.small:not(.trending):nth-child(3) {
+		grid-column: 1 / -1;
+		grid-row: 3 / span 1;
+	}
+
+	.music.news-item.common.small:not(.trending):nth-child(4) {
+		grid-column: 1 / -1;
+		grid-row: 4 / span 1;
+	}
+
+	.news.sports.items-container {
+		grid-template-rows: repeat(6, auto);
+	}
+
+	.news-item.common.small,
+	.news-item.common.smaller {
+		grid-column: 1 / -1;
+	}
+
+	.main > .news.music,
+	.main > .news.sports,
+	.main > .news.entertainment,
+	.main > .news.business,
+	.main > .news.tech,
+	.main > .news.movies,
+	.main > .news.lifestyle {
+		height: auto;
+	}
+
+	.aside .social-counter.body {
+		grid-template-columns: auto auto auto;
+		grid-template-rows: auto auto auto;
+	}
+
+	.most-list.news-item.common.smaller,
+	.content-list .news-item.common.smaller {
+		min-height: 100px;
+		/*justify-items: center;*/
+	}
+
+
+
+
+
+}

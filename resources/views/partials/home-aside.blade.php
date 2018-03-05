@@ -1,4 +1,4 @@
-<div class="aside outer-container border-left border-muted pl-3">
+<div class="aside outer-container border-left border-muted pl-0 pl-md-3">
 
 	<div class="aside social-counter inner-container">
 		<div class="social-counter header">
@@ -67,9 +67,9 @@
 	<div class="aside most-list inner-container">
 		<nav>
 		  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-		    <a class="nav-item nav-link active text-uppercase border-0" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><i class="fas fa-rss"></i>recent</a>
-		    <a class="nav-item nav-link text-uppercase border-0" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><i class="fas fa-star"></i>popular</a>
-		    <a class="nav-item nav-link text-uppercase border-0" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false"><i class="fas fa-file-alt"></i>comments</a>
+		    <a class="nav-item nav-link active text-uppercase border-0" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><i class="fas fa-rss d-none d-md-inline"></i>recent</a>
+		    <a class="nav-item nav-link text-uppercase border-0" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><i class="fas fa-star d-none d-md-inline"></i>popular</a>
+		    <a class="nav-item nav-link text-uppercase border-0" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false"><i class="fas fa-file-alt d-none d-md-inline"></i>comments</a>
 		  </div>
 		</nav>
 		<div class="tab-content" id="nav-tabContent">
