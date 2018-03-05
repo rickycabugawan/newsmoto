@@ -8,7 +8,7 @@
 		@foreach($entertainment_articles->take(1) as $article)
 		<div class="news entertainment common news-item large p-3">
 			<div class="news-item common inner-container">
-				<div class="news-item common image" style="background-image:url({{URL::asset($article->image)}})"></div>
+				<div class="news-item common image" style="background-image:url({{$article->image}})"></div>
 				<div class="news-item common date px-1 ml-3">
 					<span class="news-item date day">{{$article->created_at->format('d')}}</span>
 					<span class="news-item date month">{{$article->created_at->format('M')}}</span>
@@ -25,7 +25,7 @@
 		@foreach($entertainment_articles->slice(1) as $article)
 		<div class="news entertainment common news-item smaller pb-2">
 			<div class="news-item common inner-container">
-				<div class="news-item common image" style="background-image:url({{URL::asset($article->image)}})"></div>
+				<div class="news-item common image" style="background-image:url({{$article->image}})"></div>
 			</div>
 				<div class="news-item common title"><a href="/articles/{{$article->id}}">{{$article->title}}</a></div>
 				<div class="news-item common date-posted"><i class="far fa-calendar-alt"></i>{{$article->created_at->toFormattedDateString()}}</div>

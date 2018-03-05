@@ -93,7 +93,7 @@
 				@foreach($most_popular_articles as $article)
 					<div class="news most-list common news-item smaller py-3">
 						<div class="news-item common inner-container mr-3">
-							<div class="news-item common image" style="background-image:url({{URL::asset($article->image)}})"></div>
+							<div class="news-item common image" style="background-image:url({{$article->image}})"></div>
 						</div>
 							<div class="news-item common title"><a href="/articles/{{$article->id}}">{{$article->title}}</a></div>
 							<div class="news-item common date-posted"><i class="fas fa-comments"></i></i>{{$article->comment->count()}} Comments</div>
@@ -108,7 +108,7 @@
 				@foreach($most_recent_comments as $comment)
 					<div class="news most-list common comment news-item smaller py-3">
 						<div class="news-item common inner-container mx-2">
-							<div class="border border-dark news-item common image comment rounded-circle" style="background-image:url({{URL::asset('/images/account.png')}})"></div>
+							<div class="border border-dark news-item common image comment rounded-circle" style="background-image:url(/images/account.png)"></div>
 						</div>
 							<div class="news-item common title"><a href="/articles/{{$comment->article->id}}#cmt{{$comment->id}}">{{strtok($comment->user->name," ")}}</a></div>
 							<div class="news-item common date-posted">"{{$comment->comment_content}}"</div>

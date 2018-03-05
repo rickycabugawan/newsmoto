@@ -7,7 +7,7 @@
 		@foreach($tech_articles as $article)
 		<div class="news tech common news-item small">
 			<div class="news-item common inner-container">
-				<div class="news-item common image" style="background-image:url({{URL::asset($article->image)}})"></div>
+				<div class="news-item common image" style="background-image:url({{$article->image}})"></div>
 				<a href="/label/{{$article->category}}" class="news-item common {{$article->category}} category px-1 ml-3">{{ucfirst($article->category)}}</a>
 				<div class="news-item common title ml-3 mb-2"><a href="/articles/{{$article->id}}">{{$article->title}}</a></div>
 			</div>

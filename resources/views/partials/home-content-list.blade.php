@@ -6,7 +6,7 @@
 		@foreach($most_popular_articles as $article)
 		<div class="news content-list common news-item smaller pb-2">
 			<div class="news-item common inner-container my-2 mr-2">
-				<div class="news-item common image" style="background-image:url({{URL::asset($article->image)}})"></div>
+				<div class="news-item common image" style="background-image:url({{$article->image}})"></div>
 			</div>
 				<div class="news-item common title"><a href="/articles/{{$article->id}}">{{$article->title}}</a></div>
 				<div class="news-item common date-posted"><i class="fas fa-comments"></i></i>{{$article->comment->count()}} Comments</div>
@@ -27,7 +27,7 @@
 		
 		<div class="news content-list common news-item smaller pb-2">
 			<div class="news-item common inner-container my-2 mr-2">
-				<div class="news-item common image" style="background-image:url({{URL::asset($article->image)}})"></div>
+				<div class="news-item common image" style="background-image:url({$article->image}})"></div>
 			</div>
 				<div class="news-item common title"><a href="/articles/{{$article->id}}">{{$article->title}}</a></div>
 				<div class="news-item common date-posted"><i class="far fa-calendar-alt"></i>{{$article->created_at->toFormattedDateString()}}</div>
@@ -44,7 +44,7 @@
 		
 		<div class="news content-list common news-item smaller pb-2">
 			<div class="news-item common inner-container my-2 mr-2">
-				<div class="news-item common image" style="background-image:url({{URL::asset($article->image)}})"></div>
+				<div class="news-item common image" style="background-image:url({{$article->image}})"></div>
 			</div>
 				<div class="news-item common title"><a href="/articles/{{$article->id}}">{{$article->title}}</a></div>
 				<div class="news-item common date-posted"><i class="far fa-calendar-alt"></i>{{$article->created_at->toFormattedDateString()}}</div>
