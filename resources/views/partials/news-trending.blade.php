@@ -2,7 +2,11 @@
 
 	@foreach($featured_articles->take(2) as $article)
 	<div class="news news-item trending large">
+<<<<<<< HEAD
 		<div class="news-item trending image" style="background-image:url({{URL::asset($article->image)}})"></div>
+=======
+		<div class="news-item trending image" style="background-image:url(../{{$article->image}})"></div>
+>>>>>>> 51d5d5773422ce4a1690c9045b5a30f67f8c826d
 		<div class='news-item date {{$article->category}} px-1 ml-3'>
 			<span class="news-item date day">{{$article->created_at->format('d')}}</span>
 			<span class="news-item date month">{{$article->created_at->format('M')}}</span>
@@ -20,7 +24,11 @@
 	
 	@foreach($featured_articles->slice(2) as $article)
 	<div class="news news-item trending small">
+<<<<<<< HEAD
 		<div class="news-item trending image" style="background-image:url({{URL::asset($article->image)}})"></div>
+=======
+		<div class="news-item trending image" style="background-image:url(../{{$article->image}})"></div>
+>>>>>>> 51d5d5773422ce4a1690c9045b5a30f67f8c826d
 		<div class="news-item date {{$article->category}} px-1 ml-3">
 			<span class="news-item date day">{{$article->created_at->format('d')}}</span>
 			<span class="news-item date month">{{$article->created_at->format('M')}}</span>
