@@ -11,7 +11,7 @@
 		@foreach($search_articles as $article)
 		<div class="news {{$article->category}} common news-item large">
 			<div class="news-item common inner-container">
-				<div class="news-item common image" style="background-image:url({{$article->image}})"></div>
+				<div class="news-item common image" style="background-image:url({{URL::asset($article->image)}})"></div>
 				<div class="news-item {{$article->category}} common date px-1 ml-3">
 					<span class="news-item date day">{{$article->created_at->format('d')}}</span>
 					<span class="news-item date month">{{$article->created_at->format('M')}}</span>

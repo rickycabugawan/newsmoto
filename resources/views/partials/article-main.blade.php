@@ -19,7 +19,7 @@
 	</div>
 	<hr>
 	<div class="article article-head-image" contenteditable="true">
-		<img class="img-fluid" src="{{$this_article->image}}" >
+		<img class="img-fluid" src="{{URL::asset($this_article->image)}}" >
 	</div>
 
 	<div class="article article-body">
@@ -32,7 +32,7 @@
 	</div>
 	<div class="article author-box p-3 my-4">
 		<div class="author-box author-image-container mr-3 bg-light">
-			<img class="author-box author-image" src="/images/account.png">
+			<img class="author-box author-image" src="{{URL::asset('/images/account.png')}}">
 		</div>
 		<div class="author-box box-name mt-2">About <span class="author-name">{{strtok($this_article->user->name," ")}}</span></div>
 		<div class="author-box about mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -52,7 +52,7 @@
 				@foreach($related_articles as $article)
 				<div class="news common news-item small">
 					<div class="news-item common inner-container">
-						<div class="news-item common image" style="background-image:url({{$article->image}})"></div>
+						<div class="news-item common image" style="background-image:url({{URL::asset($article->image)}})"></div>
 						<div class="news-item common {{$article->category}} date px-1 ml-3">
 							<span class="news-item date day">{{$article->created_at->format('d')}}</span>
 							<span class="news-item date month">{{$article->created_at->format('M')}}</span>
@@ -78,7 +78,7 @@
 			@foreach($this_article->comment->sortBy('created_at') as $comment)
 			<div class="comment-box comment-item mb-2" id="cmt{{$comment->id}}">
 					<div class="comment-item image-container border border-dark">
-						<img class="comment-item image img-fluid" src="/images/account.png">
+						<img class="comment-item image img-fluid" src="{{URL::asset('/images/account.png')}}">
 					</div>
 					<div class="comment-item card">
 					  <div class="comment-item card-header">
@@ -125,7 +125,7 @@
 						@foreach($comment->reply->sortBy('created_at') as $reply)
 						<div class="comment-box reply-item mb-2">
 							<div class="comment-item image-container border border-dark">
-								<img class="comment-item image img-fluid" src="/images/account.png">
+								<img class="comment-item image img-fluid" src="{{URL::asset('/images/account.png')}}">
 							</div>
 							<div class="comment-item card">
 							  <div class="comment-item card-header">
