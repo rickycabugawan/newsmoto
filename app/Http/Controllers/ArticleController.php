@@ -48,11 +48,18 @@ class ArticleController extends Controller
      * @param  \App\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function show(Article $article)
+    public function show(Request $id)
     {
-        $related_articles = Article::where('category',$article->category)->whereNotIn('id',$article)->get()->random(3);
+        
+    }
 
-        $this_article = $article;
+    public function showArticle($id)
+    {
+        $this_article = Article::find($id);
+
+        $related_articles = Article::where('category',$this_article->category)->where('id',"!=",$this_article->id)->get()->random(3);
+        // dd($related_articles);
+
          return view('article',compact('this_article','related_articles'));
     }
 
